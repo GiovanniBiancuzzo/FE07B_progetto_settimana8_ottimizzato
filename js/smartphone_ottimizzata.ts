@@ -3,7 +3,7 @@ interface Smartphone {
     numeroChiamate: number;
 
 
-//dichiarare i metodi
+    //dichiarare i metodi
     ricarica(unaRicarica: number): void;
 
     chiamata(minutiDurata: number): void;
@@ -13,7 +13,7 @@ interface Smartphone {
     getNumeroChiamate(): number;
 
     azzeraChiamate(): void;
-    
+
 }
 
 //prima classe
@@ -28,7 +28,7 @@ class User implements Smartphone {
     }
 
 
-//implememntazione metodi dell'interfaccia
+    //implememntazione metodi dell'interfaccia
 
     public ricarica(unaRicarica: number): void {//implementazione metodo ricartica
         this.credito += unaRicarica;
@@ -50,7 +50,7 @@ class User implements Smartphone {
     public azzeraChiamate(): void { //implementazione metodo azzerachiamate
         this.numeroChiamate = 0;
     }
-    
+
 }
 
 //implementazione della classe
@@ -61,61 +61,61 @@ const terzo = new User(30, 0);
 
 let ricaricaCredito = 20;
 let minutiChiamata = 50;
-//utilizzo dei metodi giusti per effettuare due ricariche e due chiamate
 
-//console.log():
-/*'primo utente'
-'valore carica disponibile:' -> metodo
-'numero chiamate:' -> metodo
-'dopo l'azzeramento'
-'numero chiamate:' -> metodo
-*/
-console.log('----------Primo utente----------');
-console.log(`Valore del credito iniziale: ${primo.numero404()} euro`);
-console.log(`Numero chiamate iniziali: ${primo.getNumeroChiamate()}`);
-primo.ricarica(ricaricaCredito);
-console.log(`Valore del credito dopo una ricarica di ${ricaricaCredito} euro: ${primo.numero404()} euro`);
-console.log(`Effettuo una chiamata da ${minutiChiamata} minuti`);
-primo.chiamata(minutiChiamata);
-console.log(`Numero chiamate: ${primo.getNumeroChiamate()}`);
-console.log(`Valore del credito dopo la chiamata: ${primo.numero404()}`);
-primo.azzeraChiamate();
-console.log(`Numero chiamate dopo l'azzeramento: ${primo.getNumeroChiamate()}`);
-console.log('');
-/*
-'secondo utente'
-'valore carica disponibile:' -> metodo
-'numero chiamate:' -> metodo
-'dopo l'azzeramento'
-'numero chiamate:' -> metodo
-*/
-console.log('----------Secondo utente----------');
-console.log(`Valore del credito iniziale: ${secondo.numero404()} euro`);
-console.log(`Numero chiamate iniziali: ${secondo.getNumeroChiamate()}`);
-secondo.ricarica(ricaricaCredito);
-console.log(`Valore del credito dopo una ricarica di ${ricaricaCredito} euro: ${secondo.numero404()} euro`);
-console.log(`Effettuo una chiamata da ${minutiChiamata} minuti`);
-secondo.chiamata(minutiChiamata);
-console.log(`Numero chiamate: ${secondo.getNumeroChiamate()}`);
-console.log(`Valore del credito dopo la chiamata: ${secondo.numero404()}`);
-secondo.azzeraChiamate();
-console.log(`Numero chiamate dopo l'azzeramento: ${secondo.getNumeroChiamate()}`);
-console.log('');
-/*
-'terzo utente'
-'valore carica disponibile:' -> metodo
-'numero chiamate:' -> metodo
-'dopo l'azzeramento'
-'numero chiamate:' -> metodo
- */
-console.log('----------Terzo utente----------');
-console.log(`Valore del credito iniziale: ${terzo.numero404()} euro`);
-console.log(`Numero chiamate iniziali: ${terzo.getNumeroChiamate()}`);
-terzo.ricarica(ricaricaCredito);
-console.log(`Valore del credito dopo una ricarica di ${ricaricaCredito} euro: ${terzo.numero404()} euro`);
-console.log(`Effettuo una chiamata da ${minutiChiamata} minuti`);
-terzo.chiamata(minutiChiamata);
-console.log(`Numero chiamate: ${terzo.getNumeroChiamate()}`);
-console.log(`Valore del credito dopo la chiamata: ${terzo.numero404()}`);
-terzo.azzeraChiamate();
-console.log(`Numero chiamate dopo l'azzeramento: ${terzo.getNumeroChiamate()}`);
+
+$(() => {
+    let primoUtente = $('#primoUtente');
+    let secondoUtente = $('#secondoUtente');
+    let terzoUtente = $('#terzoUtente');
+    /*'primo utente'
+    'valore carica disponibile:' -> metodo
+    'numero chiamate:' -> metodo
+    'dopo l'azzeramento'
+    'numero chiamate:' -> metodo
+    */
+
+    primoUtente.append(`<li>Valore del credito iniziale: ${primo.numero404()} euro</li>`);
+    primoUtente.append(`<li>Numero chiamate iniziali: ${primo.getNumeroChiamate()}</li>`);
+    primo.ricarica(ricaricaCredito);
+    primoUtente.append(`<li>Valore del credito dopo una ricarica di ${ricaricaCredito} euro: ${primo.numero404()} euro</li>`);
+    primoUtente.append(`<li>Effettuo una chiamata da ${minutiChiamata} minuti</li>`);
+    primo.chiamata(minutiChiamata);
+    primoUtente.append(`<li>Numero chiamate: ${primo.getNumeroChiamate()}</li>`);
+    primoUtente.append(`<li>Valore del credito dopo la chiamata: ${primo.numero404()}</li>`);
+    primo.azzeraChiamate();
+    primoUtente.append(`<li>Numero chiamate dopo l'azzeramento: ${primo.getNumeroChiamate()}</li>`);
+    /*
+    'secondo utente'
+    'valore carica disponibile:' -> metodo
+    'numero chiamate:' -> metodo
+    'dopo l'azzeramento'
+    'numero chiamate:' -> metodo
+    */
+    secondoUtente.append(`<li>Valore del credito iniziale: ${secondo.numero404()} euro</li>`);
+    secondoUtente.append(`<li>Numero chiamate iniziali: ${secondo.getNumeroChiamate()}</li>`);
+    secondo.ricarica(ricaricaCredito);
+    secondoUtente.append(`<li>Valore del credito dopo una ricarica di ${ricaricaCredito} euro: ${secondo.numero404()} euro</li>`);
+    secondoUtente.append(`<li>Effettuo una chiamata da ${minutiChiamata} minuti</li>`);
+    secondo.chiamata(minutiChiamata);
+    secondoUtente.append(`<li>Numero chiamate: ${secondo.getNumeroChiamate()}</li>`);
+    secondoUtente.append(`<li>Valore del credito dopo la chiamata: ${secondo.numero404()}</li>`);
+    secondo.azzeraChiamate();
+    secondoUtente.append(`<li>Numero chiamate dopo l'azzeramento: ${secondo.getNumeroChiamate()}</li>`);
+    /*
+    'terzo utente'
+    'valore carica disponibile:' -> metodo
+    'numero chiamate:' -> metodo
+    'dopo l'azzeramento'
+    'numero chiamate:' -> metodo
+     */
+    terzoUtente.append(`<li>Valore del credito iniziale: ${terzo.numero404()} euro</li>`);
+    terzoUtente.append(`<li>Numero chiamate iniziali: ${terzo.getNumeroChiamate()}</li>`);
+    terzo.ricarica(ricaricaCredito);
+    terzoUtente.append(`<li>Valore del credito dopo una ricarica di ${ricaricaCredito} euro: ${terzo.numero404()} euro</li>`);
+    terzoUtente.append(`<li>Effettuo una chiamata da ${minutiChiamata} minuti</li>`);
+    terzo.chiamata(minutiChiamata);
+    terzoUtente.append(`<li>Numero chiamate: ${terzo.getNumeroChiamate()}</li>`);
+    terzoUtente.append(`<li>Valore del credito dopo la chiamata: ${terzo.numero404()}</li>`);
+    terzo.azzeraChiamate();
+    terzoUtente.append(`<li>Numero chiamate dopo l'azzeramento: ${terzo.getNumeroChiamate()}</li>`);
+})
